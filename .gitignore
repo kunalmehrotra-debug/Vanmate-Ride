@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Next.js build output
+.next/
+frontend/.next/
+out/
+frontend/out/
+
+# Java / Spring Boot build output
+backend/target/
+build/
+
+# Environment variables & secrets
+.env
+.env.*
+frontend/.env
+frontend/.env.*
+
+# Logs & OS files
+*.log
+.DS_Store
+Thumbs.db
+*.tsbuildinfo
+frontend/next-env.d.ts
+test-screenshots/
+
+backend/apache-maven*/
+backend/*.zip
+
+
+frontend/search.txt
+search.txt
+
+
+frontend/public/reference.mp4
+test-screenshots/
+*.mp4

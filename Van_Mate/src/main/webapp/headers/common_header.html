@@ -1,0 +1,51 @@
+<style>
+.nav-link{
+color: #F45050!important;
+font-family: Comic Sans Ms;
+font-size: 25px;
+font-weight: bold;
+}
+.dropdown-item{
+color: #FF1E00!important;
+font-family: Comic Sans Ms;
+font-size: 20px;
+}
+
+.navbar-brand{color: #F45050!important;
+font-size: 30px;
+}
+</style>
+<nav class="navbar navbar-expand-lg " style="background-color: #0F6292;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">VANMATE</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/Van_Mate/commonjsp/index.jsp">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/Van_Mate/commonjsp/aboutus.jsp">AboutUs</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="/Van_Mate/commonjsp/query.jsp">Query</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="/Van_Mate/commonjsp/feedback.jsp">FeedBack</a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Login
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/Van_Mate/parent/parent_login.jsp">Parent</a></li>
+            <li><a class="dropdown-item" href="/Van_Mate/school/school_login.jsp">School</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

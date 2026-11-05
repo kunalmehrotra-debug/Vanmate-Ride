@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VanMate - Premium School Transport</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .glass-panel {
+                @apply bg-white/5 backdrop-blur-xl border border-white/15 shadow-[0_0_20px_rgba(255,255,255,0.05)];
+            }
+            .glass-panel-hover {
+                @apply hover:bg-white/10 transition-all duration-300;
+            }
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-bright": "#363a3b",
+                        "surface": "#101415",
+                        "tertiary": "#7bd0ff",
+                        "surface-variant": "#323537",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "on-secondary-fixed": "#2a1700",
+                        "on-tertiary-container": "#008abb",
+                        "on-error": "#690005",
+                        "surface-tint": "#bec6e0",
+                        "secondary-container": "#ee9800",
+                        "secondary": "#ffb95f",
+                        "inverse-primary": "#565e74",
+                        "on-primary-fixed": "#131b2e",
+                        "on-tertiary": "#00354a",
+                        "tertiary-container": "#001a27",
+                        "primary": "#bec6e0",
+                        "primary-container": "#0f172a",
+                        "outline-variant": "#45464d",
+                        "secondary-fixed": "#ffddb8",
+                        "inverse-surface": "#e0e3e5",
+                        "on-surface": "#e0e3e5",
+                        "on-surface-variant": "#c6c6cd",
+                        "tertiary-fixed": "#c4e7ff",
+                        "inverse-on-surface": "#2d3133",
+                        "primary-fixed-dim": "#bec6e0",
+                        "tertiary-fixed-dim": "#7bd0ff",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#004c69",
+                        "surface-container": "#1d2022",
+                        "surface-container-lowest": "#0b0f10",
+                        "error-container": "#93000a",
+                        "surface-container-high": "#272a2c",
+                        "on-secondary-container": "#5b3800",
+                        "primary-fixed": "#dae2fd",
+                        "on-secondary": "#472a00",
+                        "surface-container-low": "#191c1e",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "surface-dim": "#101415",
+                        "outline": "#909097",
+                        "on-tertiary-fixed": "#001e2c",
+                        "background": "#101415",
+                        "on-primary": "#283044",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "surface-container-highest": "#323537",
+                        "on-background": "#e0e3e5",
+                        "on-primary-container": "#798098",
+                        "error": "#ffb4ab"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "container-padding-mobile": "1.25rem",
+                        "stack-md": "1rem",
+                        "stack-sm": "0.5rem",
+                        "unit": "8px",
+                        "stack-lg": "2rem",
+                        "container-padding-desktop": "2.5rem",
+                        "gutter": "1.5rem"
+                    },
+                    fontFamily: {
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    fontSize: {
+                        "headline-md": ["32px", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700" }],
+                        "label-sm": ["12px", { lineHeight: "1.2", letterSpacing: "0.02em", fontWeight: "500" }],
+                        "label-bold": ["14px", { lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "700" }],
+                        "headline-lg": ["48px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "800" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", letterSpacing: "0em", fontWeight: "400" }],
+                        "headline-sm": ["24px", { lineHeight: "1.3", letterSpacing: "0.01em", fontWeight: "600" }],
+                        "headline-lg-mobile": ["32px", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "800" }],
+                        "body-md": ["16px", { lineHeight: "1.5", letterSpacing: "0em", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen selection:bg-secondary selection:text-surface pt-20">
+<!-- TopNavBar -->
+<nav class="bg-surface/60 backdrop-blur-xl text-primary font-body-md text-body-md fixed top-0 w-full z-50 border-b border-white/10 backdrop-blur-md bg-white/5 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-10 h-20">
+<a class="font-headline-sm text-headline-sm font-extrabold text-secondary hover:opacity-80 transition-opacity" href="#">VanMate</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-white/10 duration-300 px-3 py-2 rounded-lg" href="#how-it-works">How it Works</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-white/10 duration-300 px-3 py-2 rounded-lg" href="#pricing">Pricing</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-white/10 duration-300 px-3 py-2 rounded-lg" href="#tracking">Tracking</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-white/10 duration-300 px-3 py-2 rounded-lg" href="#reviews">Reviews</a>
+</div>
+<button class="bg-secondary text-surface font-label-bold text-label-bold px-6 py-2.5 rounded-full hover:bg-secondary-fixed transition-colors active:scale-95 duration-150">
+                Book Now
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-container-padding-mobile md:px-container-padding-desktop py-20 md:py-32 grid md:grid-cols-2 gap-gutter items-center relative">
+<div class="absolute inset-0 bg-secondary/5 blur-[100px] rounded-full pointer-events-none -z-10 w-[500px] h-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+<div class="space-y-stack-lg z-10">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface leading-tight">
+                Safe, Reliable School Transport for the Modern Parent
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                Experience peace of mind with real-time tracking, vetted professional drivers, and a premium fleet designed for safety and comfort.
+            </p>
+<div class="flex gap-4">
+<button class="bg-secondary text-surface font-label-bold text-label-bold px-8 py-4 rounded-full hover:bg-secondary-fixed transition-colors shadow-[0_0_20px_rgba(255,185,95,0.3)] hover:shadow-[0_0_30px_rgba(255,185,95,0.5)]">
+                    Book Your Spot
+                </button>
+<button class="glass-panel text-on-surface font-label-bold text-label-bold px-8 py-4 rounded-full hover:bg-white/10 transition-colors">
+                    View Routes
+                </button>
+</div>
+</div>
+<div class="relative z-10 flex justify-center md:justify-end">
+<img alt="3D illustration of a modern, sleek school bus floating on a clean background." class="w-full max-w-[500px] drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] animate-[bounce_4s_ease-in-out_infinite]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF-L8SxQghkS8P6_KR9Yl1MVZ7_8Yu1MnVqFPgtOmLqDqZKYLNpzWGzP0xbbWEHlZSlkGRujlnQFujjXXUO2vXVWEk0GxzDFC_gq-7rdp75O6XfIvwXX-PfriQ_u30J9zpUf5nWoNqwi3r8XBn93YKcWN-al9R3fu3lsGIRrKVYZdMirCipUGPy1HgMdxkTEmkieYUoaRTPdBytOL7dS5BA98FoyI-hnRbszEFzp9kvbvHajTSjaV8JCZ7_ei21jK76sdYnzFdmjY"/>
+</div>
+</section>
+<!-- How it Works -->
+<section class="py-20 bg-surface-container-lowest" id="how-it-works">
+<div class="max-w-7xl mx-auto px-container-padding-mobile md:px-container-padding-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">Transparent Reliability</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Seamless management from booking to drop-off, designed for absolute calm.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="glass-panel rounded-xl p-8 glass-panel-hover flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-secondary/10 border border-secondary/20 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="calendar_month">calendar_month</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Easy Booking</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Flexible scheduling for daily commutes or specific terms with just a few taps.</p>
+</div>
+<!-- Card 2 -->
+<div class="glass-panel rounded-xl p-8 glass-panel-hover flex flex-col items-center text-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-tertiary/10 blur-3xl rounded-full"></div>
+<div class="w-16 h-16 rounded-full bg-tertiary/10 border border-tertiary/20 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="location_on">location_on</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Real-time Tracking</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Live GPS updates and notifications ensure you always know exactly where they are.</p>
+</div>
+<!-- Card 3 -->
+<div class="glass-panel rounded-xl p-8 glass-panel-hover flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="verified_user">verified_user</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Safe Drop-off</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Secure handover protocols with verified educational institution personnel.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing -->
+<section class="py-20 relative overflow-hidden" id="pricing">
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-surface-variant/20 via-surface to-surface pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-container-padding-mobile md:px-container-padding-desktop relative z-10">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">Flexible Plans</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Choose the schedule that fits your family's needs.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8 items-center">
+<!-- Daily -->
+<div class="glass-panel rounded-xl p-8 flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Daily</h3>
+<div class="font-headline-lg text-headline-lg text-on-surface mb-6">$15<span class="text-body-md text-on-surface-variant font-normal">/day</span></div>
+<ul class="space-y-4 mb-8 text-on-surface-variant">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary text-sm">check_circle</span> One-off bookings</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary text-sm">check_circle</span> Standard support</li>
+</ul>
+<button class="w-full glass-panel text-on-surface font-label-bold text-label-bold py-3 rounded-full hover:bg-white/10 transition-colors mt-auto">Select Daily</button>
+</div>
+<!-- Monthly (Popular) -->
+<div class="glass-panel rounded-xl p-8 border-secondary/30 relative transform md:-translate-y-4 shadow-[0_0_30px_rgba(255,185,95,0.1)] bg-white/10">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-secondary text-surface font-label-bold text-label-sm px-4 py-1 rounded-full uppercase tracking-wider">Most Popular</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Monthly</h3>
+<div class="font-headline-lg text-headline-lg text-on-surface mb-6">$250<span class="text-body-md text-on-surface-variant font-normal">/mo</span></div>
+<ul class="space-y-4 mb-8 text-on-surface-variant">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary text-sm">check_circle</span> Guaranteed seat</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary text-sm">check_circle</span> Priority support</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary text-sm">check_circle</span> Flexible changes</li>
+</ul>
+<button class="w-full bg-secondary text-surface font-label-bold text-label-bold py-3 rounded-full hover:bg-secondary-fixed transition-colors mt-auto shadow-[0_0_15px_rgba(255,185,95,0.3)]">Subscribe Monthly</button>
+</div>
+<!-- Term -->
+<div class="glass-panel rounded-xl p-8 flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Term</h3>
+<div class="font-headline-lg text-headline-lg text-on-surface mb-6">$800<span class="text-body-md text-on-surface-variant font-normal">/term</span></div>
+<ul class="space-y-4 mb-8 text-on-surface-variant">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary text-sm">check_circle</span> Full term coverage</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary text-sm">check_circle</span> Dedicated driver</li>
+</ul>
+<button class="w-full glass-panel text-on-surface font-label-bold text-label-bold py-3 rounded-full hover:bg-white/10 transition-colors mt-auto">Select Term</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest text-on-surface font-label-sm text-label-sm w-full py-12 border-t border-white/5 bg-surface-dim">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto px-10">
+<div class="space-y-4">
+<div class="font-headline-sm text-headline-sm font-bold text-secondary">VanMate</div>
+<p class="text-on-surface-variant max-w-xs">Premium school transport solutions offering transparent reliability for discerning parents.</p>
+</div>
+<div class="flex flex-col gap-3">
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-3">
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Safety Standards</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Contact Us</a>
+</div>
+<div class="flex items-end md:justify-end text-on-surface-variant">
+                © 2024 VanMate Transport Solutions. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

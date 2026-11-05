@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VanMate | Features & Pricing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#e0e3e5",
+                        "on-surface": "#e0e3e5",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "surface": "#101415",
+                        "surface-container-high": "#272a2c",
+                        "surface-container": "#1d2022",
+                        "on-error-container": "#ffdad6",
+                        "outline-variant": "#45464d",
+                        "error-container": "#93000a",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "tertiary-fixed-dim": "#7bd0ff",
+                        "primary": "#bec6e0",
+                        "secondary-container": "#ee9800",
+                        "on-tertiary-fixed-variant": "#004c69",
+                        "on-primary": "#283044",
+                        "secondary": "#ffb95f",
+                        "outline": "#909097",
+                        "on-surface-variant": "#c6c6cd",
+                        "surface-variant": "#323537",
+                        "inverse-on-surface": "#2d3133",
+                        "on-primary-container": "#798098",
+                        "tertiary-fixed": "#c4e7ff",
+                        "surface-container-highest": "#323537",
+                        "on-tertiary-fixed": "#001e2c",
+                        "background": "#101415",
+                        "surface-bright": "#363a3b",
+                        "surface-container-lowest": "#0b0f10",
+                        "primary-container": "#0f172a",
+                        "on-error": "#690005",
+                        "on-secondary-container": "#5b3800",
+                        "on-primary-fixed": "#131b2e",
+                        "surface-tint": "#bec6e0",
+                        "surface-container-low": "#191c1e",
+                        "tertiary-container": "#001a27",
+                        "on-tertiary-container": "#008abb",
+                        "inverse-primary": "#565e74",
+                        "primary-fixed-dim": "#bec6e0",
+                        "tertiary": "#7bd0ff",
+                        "error": "#ffb4ab",
+                        "on-tertiary": "#00354a",
+                        "inverse-surface": "#e0e3e5",
+                        "on-secondary": "#472a00",
+                        "primary-fixed": "#dae2fd",
+                        "surface-dim": "#101415",
+                        "on-secondary-fixed": "#2a1700",
+                        "secondary-fixed": "#ffddb8",
+                        "on-secondary-fixed-variant": "#653e00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-padding-mobile": "1.25rem",
+                        "stack-sm": "0.5rem",
+                        "stack-md": "1rem",
+                        "gutter": "1.5rem",
+                        "container-padding-desktop": "2.5rem",
+                        "unit": "8px",
+                        "stack-lg": "2rem"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "800"}],
+                        "label-bold": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.3", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #101415;
+            color: #e0e3e5;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-4px);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+        }
+
+        .amber-glow {
+            filter: drop-shadow(0 0 12px rgba(245, 166, 35, 0.4));
+        }
+
+        .pricing-active {
+            border: 2px solid #ee9800;
+            box-shadow: 0 0 40px rgba(238, 152, 0, 0.15);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .light-leak {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            background: radial-gradient(circle at 0% 0%, rgba(190, 198, 224, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 100% 100%, rgba(245, 166, 35, 0.05) 0%, transparent 50%);
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="bg-background">
+<div class="light-leak"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-container-padding-mobile md:px-container-padding-desktop py-4 bg-surface/5 backdrop-blur-xl border-b border-white/15 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
+<div class="font-headline-sm text-headline-sm font-extrabold text-primary tracking-tight">VanMate</div>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Features</a>
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1" href="#">Pricing</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Fleet</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-bold text-label-bold hover:bg-white/90 active:scale-95 transition-all duration-300">Get Started</button>
+</nav>
+<main class="relative z-10 pt-32 pb-20 px-container-padding-mobile md:px-container-padding-desktop max-w-7xl mx-auto">
+<!-- Section 1: Transparent Reliability -->
+<section class="mb-stack-lg">
+<div class="text-center mb-16">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4 text-on-surface">Transparent Reliability</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    Engineered for peace of mind. Experience a transit service that combines technological precision with an uncompromising commitment to student safety.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Feature 1 -->
+<div class="glass-card p-8 rounded-xl flex flex-col gap-stack-md group">
+<div class="w-12 h-12 rounded-lg bg-secondary-container/20 flex items-center justify-center amber-glow text-secondary mb-4 transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-3xl">calendar_month</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Smart Booking</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        AI-optimized scheduling that adapts to your child's daily commute, ensuring the most efficient and timely routes every single day.
+                    </p>
+<div class="mt-auto pt-4 flex items-center text-primary font-label-bold text-label-bold gap-2 cursor-pointer hover:gap-4 transition-all">
+                        Learn more <span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="glass-card p-8 rounded-xl flex flex-col gap-stack-md group">
+<div class="w-12 h-12 rounded-lg bg-secondary-container/20 flex items-center justify-center amber-glow text-secondary mb-4 transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-3xl">location_on</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Live Tracking</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Real-time GPS updates delivered straight to your dashboard. Receive instant notifications the moment the bus enters your neighborhood.
+                    </p>
+<div class="mt-auto pt-4 flex items-center text-primary font-label-bold text-label-bold gap-2 cursor-pointer hover:gap-4 transition-all">
+                        View dashboard <span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="glass-card p-8 rounded-xl flex flex-col gap-stack-md group">
+<div class="w-12 h-12 rounded-lg bg-secondary-container/20 flex items-center justify-center amber-glow text-secondary mb-4 transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Secure Handoff</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Rigorous, verified protocols with school personnel. Every transition is logged and authenticated for absolute security.
+                    </p>
+<div class="mt-auto pt-4 flex items-center text-primary font-label-bold text-label-bold gap-2 cursor-pointer hover:gap-4 transition-all">
+                        Security protocols <span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Aesthetic Divider -->
+<div class="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent my-stack-lg"></div>
+<!-- Section 2: Flexible Memberships -->
+<section class="mt-stack-lg">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md mb-4 text-on-surface">Flexible Memberships</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Choose a plan that fits your family's rhythm.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter items-stretch">
+<!-- Tier 1 -->
+<div class="glass-card p-8 rounded-xl flex flex-col">
+<div class="mb-8">
+<h4 class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest mb-2">Daily Pass</h4>
+<div class="flex items-baseline gap-1">
+<span class="text-4xl font-extrabold text-on-surface">$15</span>
+<span class="text-on-surface-variant">/day</span>
+</div>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3 text-on-surface-variant font-body-md text-body-md">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            Single ride bookings
+                        </li>
+<li class="flex items-center gap-3 text-on-surface-variant font-body-md text-body-md">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            Standard support
+                        </li>
+<li class="flex items-center gap-3 text-on-surface-variant font-body-md text-body-md">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            Real-time tracking
+                        </li>
+</ul>
+<button class="w-full py-4 rounded-lg glass-card border border-white/20 font-label-bold text-label-bold hover:bg-white/10 transition-all">Select Plan</button>
+</div>
+<!-- Tier 2 (Most Popular) -->
+<div class="glass-card p-8 rounded-xl flex flex-col pricing-active relative overflow-hidden transform scale-105 z-20">
+<div class="absolute top-0 right-0 bg-secondary px-6 py-1 rounded-bl-xl font-label-bold text-label-sm text-on-secondary-container uppercase">Most Popular</div>
+<div class="mb-8">
+<h4 class="font-label-bold text-label-bold text-secondary uppercase tracking-widest mb-2">Monthly Prime</h4>
+<div class="flex items-baseline gap-1">
+<span class="text-5xl font-extrabold text-on-surface">$250</span>
+<span class="text-on-surface-variant">/mo</span>
+</div>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3 text-on-surface font-body-md text-body-md">
+<span class="material-symbols-outlined text-secondary text-xl" style="font-variation-settings: 'FILL' 1;">stars</span>
+                            Guaranteed seat
+                        </li>
+<li class="flex items-center gap-3 text-on-surface font-body-md text-body-md">
+<span class="material-symbols-outlined text-secondary text-xl" style="font-variation-settings: 'FILL' 1;">stars</span>
+                            Priority support
+                        </li>
+<li class="flex items-center gap-3 text-on-surface font-body-md text-body-md">
+<span class="material-symbols-outlined text-secondary text-xl" style="font-variation-settings: 'FILL' 1;">stars</span>
+                            Flexible changes
+                        </li>
+<li class="flex items-center gap-3 text-on-surface font-body-md text-body-md">
+<span class="material-symbols-outlined text-secondary text-xl" style="font-variation-settings: 'FILL' 1;">stars</span>
+                            Multi-kid discount
+                        </li>
+</ul>
+<button class="w-full py-4 rounded-lg bg-secondary text-on-secondary-container font-extrabold text-label-bold hover:brightness-110 transition-all shadow-[0_0_20px_rgba(238,152,0,0.4)]">Select Plan</button>
+</div>
+<!-- Tier 3 -->
+<div class="glass-card p-8 rounded-xl flex flex-col">
+<div class="mb-8">
+<h4 class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest mb-2">Term Elite</h4>
+<div class="flex items-baseline gap-1">
+<span class="text-4xl font-extrabold text-on-surface">$800</span>
+<span class="text-on-surface-variant">/term</span>
+</div>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3 text-on-surface-variant font-body-md text-body-md">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            Full term coverage
+                        </li>
+<li class="flex items-center gap-3 text-on-surface-variant font-body-md text-body-md">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            Dedicated driver
+                        </li>
+<li class="flex items-center gap-3 text-on-surface-variant font-body-md text-body-md">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            VIP safety protocols
+                        </li>
+<li class="flex items-center gap-3 text-on-surface-variant font-body-md text-body-md">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                            Premium amenities
+                        </li>
+</ul>
+<button class="w-full py-4 rounded-lg glass-card border border-white/20 font-label-bold text-label-bold hover:bg-white/10 transition-all">Select Plan</button>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="mt-32 relative rounded-2xl overflow-hidden p-stack-lg text-center">
+<div class="absolute inset-0 bg-primary-container/30 backdrop-blur-md -z-10"></div>
+<div class="absolute -top-20 -left-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+<div class="absolute -bottom-20 -right-20 w-64 h-64 bg-secondary/10 rounded-full blur-3xl animate-pulse"></div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6">Ready to upgrade your school run?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto mb-10">
+                Join hundreds of families who trust VanMate for safe, professional, and reliable school transport.
+            </p>
+<div class="flex flex-col md:flex-row gap-gutter justify-center items-center">
+<button class="px-10 py-4 bg-primary text-on-primary rounded-full font-label-bold text-label-bold shadow-xl hover:scale-105 active:scale-95 transition-all">Get Started Today</button>
+<button class="px-10 py-4 border border-white/20 rounded-full font-label-bold text-label-bold hover:bg-white/5 transition-all">Schedule a Demo</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-container-padding-desktop py-stack-lg flex flex-col md:flex-row justify-between items-center gap-stack-md bg-surface-container-lowest border-t border-white/10 mt-20 relative z-10">
+<div class="flex flex-col items-center md:items-start gap-2">
+<div class="font-headline-sm text-headline-sm text-primary font-bold">VanMate</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant opacity-80">© 2024 VanMate Transit. All rights reserved.</div>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Safety Standards</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary transition-colors" href="#">Support</a>
+</div>
+</footer>
+<script>
+        // Subtle micro-interactions for the glass cards
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body></html>

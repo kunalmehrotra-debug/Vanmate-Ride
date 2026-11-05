@@ -1,0 +1,43 @@
+name: VanMate Java EE CI/CD Pipeline
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  build-war:
+    name: Compile Servlets & Package WAR
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: "17"
+          distribution: "temurin"
+
+      - name: Fetch Servlet API & Compile Java Sources
+        run: |
+          mkdir -p build/classes
+          curl -sL https://repo1.maven.org/maven2/javax/servlet/javax.servlet-api/4.0.1/javax.servlet-api-4.0.1.jar -o servlet-api.jar
+          find src/main/java -name "*.java" > sources.txt
+          javac -cp "src/main/webapp/WEB-INF/lib/*:servlet-api.jar" -d build/classes @sources.txt
+          cp -r src/main/java/vanmate/dbutils/*.properties build/classes/vanmate/dbutils/ || true
+
+      - name: Package Van_Mate.war
+        run: |
+          mkdir -p dist/WEB-INF/classes
+          cp -r src/main/webapp/* dist/
+          cp -r build/classes/* dist/WEB-INF/classes/
+          cd dist && jar -cvf ../Van_Mate.war *
+
+      - name: Upload WAR Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Van_Mate-war
+          path: Van_Mate.war

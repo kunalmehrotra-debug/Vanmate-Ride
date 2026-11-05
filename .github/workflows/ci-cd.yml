@@ -1,0 +1,98 @@
+name: VanMate Full-Stack CI/CD Pipeline
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+env:
+  DATABASE_URL: ${{ secrets.DATABASE_URL || 'postgresql://postgres:postgres@localhost:5432/vanmate' }}
+
+jobs:
+  build-frontend:
+    name: Build & Verify Next.js + Prisma Frontend
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./frontend
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: ./frontend/package-lock.json
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Generate Prisma Client
+        run: npx prisma generate
+
+      - name: Build Production Next.js Bundle
+        run: npm run build
+
+  build-java-war:
+    name: Compile Java EE Servlets & Package WAR
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./Van_Mate
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: "17"
+          distribution: "temurin"
+
+      - name: Compile Servlets, DAOs & Beans
+        run: |
+          mkdir -p build/classes
+          curl -sL https://repo1.maven.org/maven2/javax/servlet/javax.servlet-api/4.0.1/javax.servlet-api-4.0.1.jar -o servlet-api.jar
+          find src/main/java -name "*.java" > sources.txt
+          javac -cp "src/main/webapp/WEB-INF/lib/*:servlet-api.jar" -d build/classes @sources.txt
+          cp -r src/main/java/vanmate/dbutils/*.properties build/classes/vanmate/dbutils/ || true
+
+      - name: Package Van_Mate.war
+        run: |
+          mkdir -p dist/WEB-INF/classes
+          cp -r src/main/webapp/* dist/
+          cp -r build/classes/* dist/WEB-INF/classes/
+          cd dist && jar -cvf ../../Van_Mate.war *
+
+      - name: Upload Deployable WAR Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Van_Mate-war
+          path: Van_Mate.war
+
+  deploy:
+    name: Continuous Deployment (Auto-Deploy on Push)
+    needs: [build-frontend, build-java-war]
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to Vercel (when VERCEL_TOKEN secret is set)
+        if: env.VERCEL_TOKEN != ''
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          npm install --global vercel@latest
+          vercel pull --yes --environment=production --token=$VERCEL_TOKEN
+          vercel build --prod --token=$VERCEL_TOKEN
+          vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN

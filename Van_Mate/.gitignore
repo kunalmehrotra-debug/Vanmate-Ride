@@ -1,0 +1,13 @@
+# Compiled classes
+build/
+target/
+*.class
+
+# Package files
+*.war
+*.ear
+
+# IDE metadata
+.metadata/
+.DS_Store
+Thumbs.db

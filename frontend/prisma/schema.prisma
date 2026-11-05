@@ -1,0 +1,62 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  role      String   // 'parent', 'owner', 'school'
+  userId    String   @unique
+  password  String
+  name      String
+  email     String   @unique
+  phone     String   @unique
+  city      String
+  address   String
+  createdAt DateTime @default(now())
+
+  // Relations
+  parentProfile ParentProfile?
+  ownerProfile  OwnerProfile?
+  schoolProfile SchoolProfile?
+}
+
+model ParentProfile {
+  id              String @id @default(cuid())
+  studentName     String
+  studentStandard String
+  studentAge      Int
+  schoolName      String
+
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model OwnerProfile {
+  id                String   @id @default(cuid())
+  hasVehicle        Boolean
+  vehicleNumber     String?  @unique
+  vehicleType       String?
+  licenseNumber     String   @unique
+  licenseStartDate  DateTime
+  licenseEndDate    DateTime
+  yearsOfExperience Int
+
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model SchoolProfile {
+  id                  String @id @default(cuid())
+  schoolOfficialName  String
+  schoolBoard         String
+  schoolTotalStudents Int
+  principalName       String
+
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+}

@@ -1,0 +1,93 @@
+<style>
+.nav-link{
+color: #F0F0F0!important;
+font-family: Comic Sans Ms;
+font-size: 20px;
+font-weight: bold;
+}
+.dropdown-item{
+color: #FF1E00!important;
+font-family: Comic Sans Ms;
+font-size: 20px;
+}
+
+.navbar-brand{
+color: #F9F5EB!important;
+font-size: 30px;
+}
+</style>
+<nav class="navbar navbar-expand-lg " style="background-color: #0F6292;">
+  <div class="container-fluid">
+    <h1 class="navbar-brand" >AdminPortal</h1>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/Van_Mate/admin/admin_home.jsp">Home</a>
+        </li>
+ <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+           <i class='fas fa-comment-alt' ></i>MESSAGE
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/Van_Mate/admin/admin_compose.jsp">Compose</a></li>
+             <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/Van_Mate/admin/admin_inbox.jsp">Inbox</a></li>
+            <li><a class="dropdown-item" href="/Van_Mate/admin/admin_sentitem.jsp">Sentitem</a></li>
+          </ul>
+ </li>
+ <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+           <i class='fas fa-user-friends' ></i>USERS
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/Van_Mate/admin/allschools.jsp">School</a></li>
+            <li><a class="dropdown-item" href="/Van_Mate/admin/allparents.jsp">Parent</a></li>
+          </ul>
+ </li>
+ <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+           <i class='fas fa-cogs' ></i>SETTING
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/Van_Mate/Admin_Logout">Logout</a></li>
+            <li><a class="dropdown-item" href="/Van_Mate/admin/admin_editprofile.jsp">EditProfile</a></li>
+          </ul>
+ </li>
+ <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+           <i class='fas fa-user-friends' ></i>RESOURCES
+          </a>
+          <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="/Van_Mate/admin/driver_details.jsp">Driver Registration</a></li>
+          <li><a class="dropdown-item" href="/Van_Mate/admin/vehicle_details.jsp">Vehicle Registration</a></li>
+            <li><a class="dropdown-item" href="/Van_Mate/admin/view_driver.jsp">Drivers</a></li>
+            <li><a class="dropdown-item" href="/Van_Mate/admin/view_vehicle.jsp">Vehicles</a></li>
+             <li><a class="dropdown-item" href="/Van_Mate/admin/assignvehicle.jsp">AssignVehicle</a></li>
+          </ul>
+ </li>
+ <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+           VehicleRequest
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/Van_Mate/admin/view_bookrequest.jsp">Pending</a></li>
+            <li><a class="dropdown-item" href="/Van_Mate/admin/view_confirmrequest.jsp">Confirmed</a></li>
+          </ul>
+ </li>
+ 
+ <li class="nav-item" style="font-size: 20px; margin-left: 5px;">
+          <a class="nav-link" href="/Van_Mate/admin/view_feedback.jsp">Feedbacks</a>
+        </li>
+ <li class="nav-item" style="font-size: 20px; margin-left: 5px;">
+          <a class="nav-link" href="/Van_Mate/admin/view_query.jsp">QUERIES</a>
+        </li>
+ <li class="nav-item" style="font-size: 20px; margin-left: 5px;">
+          <a class="nav-link" href="/Van_Mate/admin/notice.jsp">Notice</a>
+  </li>
+      </ul>
+    </div>
+  </div>
+</nav>
